@@ -1,0 +1,14 @@
+@import './styles/design-tokens.css';
+@import './styles/app-shared.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--app-font);
+  color: var(--app-text);
+  background: var(--app-bg);
+}

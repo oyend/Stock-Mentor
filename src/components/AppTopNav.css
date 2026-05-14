@@ -1,0 +1,95 @@
+:root {
+  --app-top-nav-height: 70px;
+}
+
+.app-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--app-top-nav-height);
+  z-index: 1100;
+  background-color: var(--app-nav-glass);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.app-top-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.app-top-nav__logo {
+  flex-shrink: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--app-accent);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.app-top-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.app-top-nav__steps {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+  max-width: min(100%, 720px);
+}
+
+.app-top-nav__step {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--app-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.app-top-nav__step:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.app-top-nav__step--active {
+  color: var(--app-accent);
+  background: var(--app-accent-soft);
+}
+
+.app-top-nav__step--active:hover {
+  color: var(--app-accent);
+  background: var(--app-accent-soft);
+  filter: brightness(0.97);
+}
+
+.app-route-shell {
+  padding-top: var(--app-top-nav-height);
+  box-sizing: border-box;
+}

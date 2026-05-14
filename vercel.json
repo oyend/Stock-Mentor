@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/dashboard/dashboard.html",
+      "destination": "/dashboard",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
