@@ -50,7 +50,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 4px;
   padding: 4px;
   border-radius: 12px;
@@ -121,18 +121,24 @@
     min-width: 0;
     flex-wrap: nowrap;
     gap: 6px;
+    justify-content: flex-end;
+    overflow: hidden;
   }
 
   .app-top-nav__steps {
-    flex: 1;
+    flex: 1 1 0;
+    width: 0;
     min-width: 0;
     flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     gap: 2px;
-    padding: 3px;
-    max-width: none;
+    padding: 3px 4px;
+    scroll-padding-inline-end: 4px;
   }
 
   .app-top-nav__steps::-webkit-scrollbar {
@@ -146,7 +152,13 @@
   }
 
   .app-top-nav .app-theme-toggle {
-    padding: 5px 8px;
-    font-size: 11px;
+    flex-shrink: 0;
+    padding: 5px 7px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .app-top-nav .app-theme-toggle__label {
+    display: none;
   }
 }
