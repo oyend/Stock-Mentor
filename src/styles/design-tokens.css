@@ -1,0 +1,49 @@
+/**
+ * 앱 전역 디자인 토큰 — AI 투자 리포트 라이트 기준
+ * 다크: html[data-theme='dark'] (ThemeSync + 리포트 스토어와 동기화)
+ */
+:root {
+  --app-bg: #f1f5f9;
+  --app-surface: #f8fafc;
+  --app-card: #ffffff;
+  --app-text: #0f172a;
+  --app-muted: #64748b;
+  --app-border: #e2e8f0;
+  --app-accent: #2563eb;
+  --app-accent-soft: #eff6ff;
+  --app-accent-hover: #1d4ed8;
+  --app-chart-bar: #4f46e5;
+  --app-success: #10b981;
+  --app-warning: #f97316;
+  --app-danger: #ef4444;
+  --app-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  --app-radius: 16px;
+  --app-radius-sm: 12px;
+  --app-font: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --app-soft-fg: #1e3a8a;
+  --app-soft-border: #bfdbfe;
+  --app-soft-hover-bg: #dbeafe;
+  --app-nav-glass: rgba(255, 255, 255, 0.88);
+}
+
+html[data-theme='dark'] {
+  --app-bg: #020617;
+  --app-surface: #0f172a;
+  --app-card: #1e293b;
+  --app-text: #f1f5f9;
+  --app-muted: #94a3b8;
+  --app-border: #334155;
+  /* 라이트 대비로 덜 형광인 블루 (기존 스카이 #38bdf8 대비 눈부심 완화) */
+  --app-accent: #3b82f6;
+  --app-accent-soft: rgba(59, 130, 246, 0.14);
+  --app-accent-hover: #60a5fa;
+  --app-chart-bar: #818cf8;
+  --app-success: #34d399;
+  --app-warning: #fb923c;
+  --app-danger: #f87171;
+  --app-shadow: 0 14px 48px rgba(0, 0, 0, 0.45);
+  --app-soft-fg: #bfdbfe;
+  --app-soft-border: rgba(59, 130, 246, 0.35);
+  --app-soft-hover-bg: rgba(59, 130, 246, 0.22);
+  --app-nav-glass: rgba(15, 23, 42, 0.88);
+}

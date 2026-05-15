@@ -1,0 +1,268 @@
+/* 트레이딩 기록장 — AI 리포트와 동일 토큰·컴포넌트 */
+
+.dashboard-page {
+  font-family: var(--app-font);
+  background: var(--app-bg);
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px 48px;
+  margin: 0;
+  min-height: 100vh;
+  color: var(--app-text);
+}
+
+.dashboard-page .container {
+  background: var(--app-card);
+  padding: 24px 22px 32px;
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow);
+  border: 1px solid var(--app-border);
+  width: 100%;
+  max-width: 720px;
+}
+
+.dashboard-page h1 {
+  text-align: center;
+  color: var(--app-text);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.dashboard-page h2 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--app-text);
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--app-border);
+  letter-spacing: -0.02em;
+}
+
+.dashboard-page .note-title {
+  color: #c2410c;
+  border-bottom-color: #fed7aa;
+}
+
+.dashboard-page .input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.dashboard-page .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard-page .button-group .app-btn-primary,
+.dashboard-page .button-group .app-btn-secondary {
+  flex: 1;
+}
+
+.dashboard-page .button-group.dashboard-page__tabs-like {
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+/* 리포트 `.rp-tabs`와 동일한 셸 + 탭형 버튼 톤 */
+.dashboard-page__tabs-like {
+  width: 100%;
+}
+
+.dashboard-page__tabs-like .app-btn-primary,
+.dashboard-page__tabs-like .app-btn-secondary {
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dashboard-page__tabs-like .app-btn-primary {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.dashboard-page__tabs-like .app-btn-primary:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  filter: brightness(0.96);
+}
+
+.dashboard-page__tabs-like .app-btn-secondary {
+  background: transparent;
+  color: var(--app-muted);
+  border: none;
+}
+
+.dashboard-page__tabs-like .app-btn-secondary:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  border: none;
+}
+
+.dashboard-page__save-banner {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--app-accent);
+  background: var(--app-accent-soft);
+  border: 1px solid var(--app-soft-border);
+  border-radius: var(--app-radius-sm);
+  padding: 10px 14px;
+  margin: 0 0 16px;
+  animation: dashboard-page-banner-in 0.35s ease;
+}
+
+@keyframes dashboard-page-banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-page__memo-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--app-muted);
+  margin-bottom: 8px;
+}
+
+.dashboard-page__memo-input {
+  margin-bottom: 16px;
+  resize: vertical;
+  min-height: 88px;
+}
+
+.dashboard-page .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.dashboard-page .data-table th,
+.dashboard-page .data-table td {
+  border: 1px solid var(--app-border);
+  padding: 10px 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.dashboard-page .data-table th {
+  background: var(--app-surface);
+  font-weight: 700;
+  color: var(--app-muted);
+}
+
+.dashboard-page .note-table th {
+  background: #fffbeb;
+}
+
+.dashboard-page .memo-text {
+  font-size: 12px;
+  color: var(--app-muted);
+  text-align: left;
+  max-width: 200px;
+  word-break: keep-all;
+}
+
+/* 테이블 액션 — `.rp-tabs__btn` 계열 pill */
+.dashboard-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  margin: 4px 2px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--app-font);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--app-muted);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dashboard-pill:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.dashboard-pill--accent {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.dashboard-pill--accent:hover {
+  filter: brightness(0.96);
+}
+
+.dashboard-pill--danger {
+  color: var(--app-danger);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.dashboard-pill--danger:hover {
+  background: rgba(239, 68, 68, 0.16);
+  color: var(--app-danger);
+}
+
+html[data-theme='dark'] .dashboard-pill--danger {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+html[data-theme='dark'] .dashboard-pill--danger:hover {
+  background: rgba(248, 113, 113, 0.18);
+}
+
+.dashboard-page .targets-cell {
+  text-align: center;
+}
+
+.dashboard-page .profit-tag {
+  color: var(--app-success);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dashboard-page .loss-tag {
+  color: var(--app-danger);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .dashboard-page .container {
+    padding: 18px 14px 28px;
+  }
+}
+
+html[data-theme='dark'] .dashboard-page .note-table th {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}

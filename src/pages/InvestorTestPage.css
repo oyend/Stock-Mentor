@@ -1,0 +1,536 @@
+/* 투자 성향 테스트 — 금융 대시보드 톤, 모바일 우선 */
+
+.investor-test {
+  --it-surface: var(--app-card);
+  --it-surface-2: var(--app-surface);
+  --it-border: var(--app-border);
+  --it-text: var(--app-text);
+  --it-muted: var(--app-muted);
+  --it-accent: var(--app-accent);
+  --it-accent-soft: var(--app-accent-soft);
+  --it-success: var(--app-success);
+  --it-warning: #d97706;
+  --it-danger: var(--app-danger);
+  --it-radius: var(--app-radius);
+  --it-shadow: var(--app-shadow);
+  --it-font: var(--app-font);
+
+  min-height: 100vh;
+  font-family: var(--it-font);
+  color: var(--it-text);
+  background: var(--app-bg);
+  padding: 0 16px 48px;
+}
+
+.investor-test__shell {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.investor-test__card {
+  background: var(--it-surface);
+  border-radius: var(--it-radius);
+  box-shadow: var(--it-shadow);
+  padding: 22px 20px 24px;
+  border: 1px solid var(--it-border);
+  animation: it-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes it-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.investor-test__mentor-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.investor-test__mentor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.investor-test__mentor-bubble {
+  flex: 1;
+  background: var(--it-surface-2);
+  border-radius: 14px 14px 14px 4px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--it-muted);
+  border: 1px solid var(--it-border);
+}
+
+.investor-test__mentor-bubble strong {
+  color: var(--it-text);
+  font-weight: 700;
+}
+
+.investor-test__progress-wrap {
+  margin-bottom: 18px;
+}
+
+.investor-test__progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--it-muted);
+  margin-bottom: 8px;
+}
+
+.investor-test__progress-track {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.investor-test__progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--app-accent), var(--app-chart-bar));
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.investor-test__q-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+  margin-bottom: 16px;
+  color: var(--it-text);
+}
+
+.investor-test__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.investor-test__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 16px 16px;
+  border-radius: 14px;
+  border: 2px solid var(--it-border);
+  background: var(--it-surface);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--it-text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.investor-test__option:hover {
+  border-color: color-mix(in srgb, var(--it-accent) 42%, var(--it-border));
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--it-accent) 14%, transparent);
+  transform: translateY(-2px);
+}
+
+.investor-test__option:active {
+  transform: translateY(0);
+}
+
+.investor-test__option--selected {
+  border-color: var(--it-accent);
+  background: var(--it-accent-soft);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--it-accent) 20%, transparent);
+}
+
+.investor-test__nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.investor-test__nav-hint {
+  font-size: 12px;
+  color: var(--it-muted);
+  font-weight: 600;
+}
+
+.investor-test__nav-row .app-btn-secondary.investor-test__nav-back {
+  flex: 0 1 auto;
+  padding: 8px 12px;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: var(--it-muted);
+  box-shadow: none;
+}
+
+.investor-test__nav-row .app-btn-secondary.investor-test__nav-back:hover:not(:disabled) {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  border: none;
+}
+
+.investor-test__nav-row .app-btn-secondary.investor-test__nav-back:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.investor-test__saved-hint {
+  margin-bottom: 14px;
+}
+
+.investor-test__btn-full {
+  width: 100%;
+}
+
+/* 분석 중 */
+.investor-test__analyzing {
+  text-align: center;
+  padding: 32px 8px 24px;
+}
+
+.investor-test__pulse {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--app-accent), var(--app-chart-bar));
+  animation: it-pulse 1.4s ease-in-out infinite;
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--app-accent) 40%, transparent);
+}
+
+@keyframes it-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--app-accent) 35%, transparent);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 16px color-mix(in srgb, var(--app-accent) 0%, transparent);
+  }
+}
+
+.investor-test__analyzing h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.investor-test__analyzing p {
+  font-size: 14px;
+  color: var(--it-muted);
+  line-height: 1.6;
+}
+
+.investor-test__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.investor-test__dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--it-accent);
+  opacity: 0.3;
+  animation: it-dot 1.2s ease-in-out infinite;
+}
+
+.investor-test__dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.investor-test__dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes it-dot {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+/* 결과 */
+.investor-test__result-hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.investor-test__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.investor-test__badge--stable {
+  background: #ecfdf5;
+  color: var(--it-success);
+  border: 1px solid #a7f3d0;
+}
+
+.investor-test__badge--growth {
+  background: #eff6ff;
+  color: var(--it-accent);
+  border: 1px solid #bfdbfe;
+}
+
+.investor-test__badge--aggressive {
+  background: #fff7ed;
+  color: var(--it-warning);
+  border: 1px solid #fed7aa;
+}
+
+.investor-test__result-headline {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.investor-test__result-desc {
+  font-size: 14px;
+  color: var(--it-muted);
+  line-height: 1.65;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.investor-test__score-bar {
+  display: flex;
+  gap: 6px;
+  margin: 18px 0 8px;
+}
+
+.investor-test__score-seg {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.investor-test__score-seg-inner {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.investor-test__score-seg--stable .investor-test__score-seg-inner {
+  background: var(--it-success);
+}
+.investor-test__score-seg--growth .investor-test__score-seg-inner {
+  background: var(--it-accent);
+}
+.investor-test__score-seg--aggressive .investor-test__score-seg-inner {
+  background: var(--it-warning);
+}
+
+.investor-test__score-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--it-muted);
+  margin-bottom: 20px;
+}
+
+.investor-test__grid {
+  display: grid;
+  gap: 10px;
+}
+
+.investor-test__info-tile {
+  background: var(--it-surface-2);
+  border: 1px solid var(--it-border);
+  border-radius: 14px;
+  padding: 14px 14px;
+  text-align: left;
+  animation: it-tile-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.investor-test__info-tile:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.investor-test__info-tile:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.investor-test__info-tile:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.investor-test__info-tile:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.investor-test__info-tile:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes it-tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.investor-test__info-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.investor-test__info-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--it-text);
+}
+
+.investor-test__journey-banner {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.investor-test__journey-banner strong {
+  color: #78350f;
+}
+
+.investor-test__flow-hint {
+  font-size: 13px;
+  color: var(--it-muted);
+  line-height: 1.6;
+  text-align: center;
+  margin: 16px 0 0;
+  font-weight: 600;
+}
+
+.investor-test__flow-hint strong {
+  color: var(--it-text);
+}
+
+.investor-test__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.investor-test__actions-row {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+.investor-test__actions-row .app-btn-secondary {
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  color: var(--it-muted);
+}
+
+.investor-test__actions-row .app-btn-secondary:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  border: none;
+}
+
+html[data-theme='dark'] .investor-test__mentor-avatar {
+  background: linear-gradient(135deg, #1e3a8a, #5b21b6);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--app-accent) 32%, transparent);
+}
+
+html[data-theme='dark'] .investor-test__journey-banner {
+  background: rgba(251, 191, 36, 0.12);
+  border-color: #b45309;
+  color: #fde68a;
+}
+
+html[data-theme='dark'] .investor-test__journey-banner strong {
+  color: #fffbeb;
+}
+
+html[data-theme='dark'] .investor-test__option {
+  background: var(--app-card);
+}
+
+html[data-theme='dark'] .investor-test__mentor-bubble {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+html[data-theme='dark'] .investor-test__progress-track {
+  background: var(--app-border);
+}
+
+@media (min-width: 480px) {
+  .investor-test {
+    padding: 0 24px 56px;
+  }
+  .investor-test__shell {
+    padding-top: 32px;
+  }
+  .investor-test__card {
+    padding: 26px 24px 28px;
+  }
+  .investor-test__q-title {
+    font-size: 19px;
+  }
+}
