@@ -260,6 +260,12 @@ html[data-theme='dark'] .dashboard-pill--danger:hover {
   .dashboard-page .container {
     padding: 18px 14px 28px;
   }
+
+  .dashboard-page .data-table th,
+  .dashboard-page .data-table td {
+    font-size: 11px;
+    padding: 6px 4px;
+  }
 }
 
 html[data-theme='dark'] .dashboard-page .note-table th {
