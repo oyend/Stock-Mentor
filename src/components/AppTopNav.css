@@ -50,7 +50,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 4px;
   padding: 4px;
   border-radius: 12px;
@@ -92,4 +92,73 @@
 .app-route-shell {
   padding-top: var(--app-top-nav-height);
   box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --app-top-nav-height: 58px;
+  }
+
+  .app-top-nav {
+    height: auto;
+    min-height: var(--app-top-nav-height);
+    padding: 6px 0;
+  }
+
+  .app-top-nav__inner {
+    padding: 0 10px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .app-top-nav__logo {
+    font-size: 15px;
+    letter-spacing: -0.3px;
+  }
+
+  .app-top-nav__actions {
+    flex: 1;
+    min-width: 0;
+    flex-wrap: nowrap;
+    gap: 6px;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .app-top-nav__steps {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    gap: 2px;
+    padding: 3px 4px;
+    scroll-padding-inline-end: 4px;
+  }
+
+  .app-top-nav__steps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app-top-nav__step {
+    font-size: 10px;
+    padding: 4px 6px;
+    border-radius: 8px;
+  }
+
+  .app-top-nav .app-theme-toggle {
+    flex-shrink: 0;
+    padding: 5px 7px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .app-top-nav .app-theme-toggle__label {
+    display: none;
+  }
 }

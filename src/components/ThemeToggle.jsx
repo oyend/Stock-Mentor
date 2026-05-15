@@ -12,7 +12,8 @@ export default function ThemeToggle({ className = '' }) {
       aria-pressed={darkMode}
       aria-label={darkMode ? '라이트 모드로 전환' : '다크 모드로 전환'}
     >
-      {darkMode ? '☀️ 라이트' : '🌙 다크'}
+      {darkMode ? '☀️' : '🌙'}
+      <span className="app-theme-toggle__label">{darkMode ? ' 라이트' : ' 다크'}</span>
     </button>
   );
 }
